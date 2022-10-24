@@ -1,0 +1,19 @@
+{
+  "name": "codebros/realko-common",
+  "autoload": {
+    "psr-4": {
+      "Codebros\\RealkoCommon\\": "src/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "require-dev": {
+    "mockery/mockery": "^1.5",
+    "nette/tester": "^2.4"
+  },
+  "require": {
+    "doctrine/orm": "^2.13",
+    "ramsey/uuid-doctrine": "^1.8"
+  }
+}
