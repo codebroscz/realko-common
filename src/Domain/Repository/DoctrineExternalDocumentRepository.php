@@ -11,7 +11,7 @@ class DoctrineExternalDocumentRepository implements ExternalDocumentRepository
 	private \Doctrine\ORM\EntityRepository $repository;
 
 	public function __construct(
-		private readonly \App\Doctrine\EntityManager $entityManager,
+		private readonly \Doctrine\ORM\EntityManager $entityManager,
 	)
 	{
 		$this->repository = $this->entityManager->getRepository(\Codebros\RealkoCommon\Domain\Entity\ExternalDocument::class);

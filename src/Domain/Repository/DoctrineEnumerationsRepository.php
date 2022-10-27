@@ -11,7 +11,7 @@ class DoctrineEnumerationsRepository extends EnumerationsRepository
 	private ?array $cache = null;
 
 	public function __construct(
-		private readonly \App\Doctrine\EntityManager $entityManager,
+		private readonly \Doctrine\ORM\EntityManager $entityManager,
 	)
 	{
 	}
