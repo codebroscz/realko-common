@@ -35,4 +35,12 @@ abstract class Enumeration
 		return $this->title;
 	}
 
+    public function toArray(): array
+    {
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+        ];
+    }
+
 }

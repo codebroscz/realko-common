@@ -27,6 +27,7 @@ $enumRepository = new class extends \Codebros\RealkoCommon\Domain\Repository\Enu
 $estate = new \Codebros\RealkoCommon\Domain\Entity\Estate(
 	1,
 	 2,
+    accessToLot: new \Codebros\RealkoCommon\Domain\Entity\AccessToLot(1, 'Access to lot'),
 );
 
 $converter = new \Codebros\RealkoCommon\Domain\Converter\EstateConverter(
@@ -40,6 +41,10 @@ $array = $converter->toArray($estate);
 
 $expected = [
 	'id' => 1,
+    'accessToLot' => [
+        'id' => 1,
+        'title' => 'Access to lot',
+    ],
 ];
 
 $intersection = \array_intersect_key($array, $expected);
