@@ -52,11 +52,22 @@ $converter = new \Codebros\RealkoCommon\Domain\Converter\EstateConverter(
 $array = [
 	'id' => 1,
 	'stamp' => 1,
-	'accessToLot' => \Codebros\RealkoCommon\Domain\Enum\AccessToLot::NO->value,
+	'accessToLot' => [
+        'id' => \Codebros\RealkoCommon\Domain\Enum\AccessToLot::NO->value,
+        'title' => \Codebros\RealkoCommon\Domain\Enum\AccessToLot::NO->name,
+    ],
+    'characterOfVillage' => [
+        [
+            'id' => \Codebros\RealkoCommon\Domain\Enum\CharacterOfVillage::BIG_CITY->value,
+            'title' => \Codebros\RealkoCommon\Domain\Enum\CharacterOfVillage::BIG_CITY->name,
+        ]
+    ]
 ];
 
 $entity = $converter->toObject($array);
 
 \Tester\Assert::same(1, $entity->externalId());
 \Tester\Assert::same(\Codebros\RealkoCommon\Domain\Enum\AccessToLot::NO->value, $entity->accessToLot()->id());
+\Tester\Assert::count(1, $entity->characterOfVillage()->toArray());
+\Tester\Assert::type(\Codebros\RealkoCommon\Domain\Entity\CharacterOfVillage::class, $entity->characterOfVillage()->get(0));
 \Tester\Assert::null($entity->water());

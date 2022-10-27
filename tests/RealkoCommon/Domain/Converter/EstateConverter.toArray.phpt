@@ -28,6 +28,12 @@ $estate = new \Codebros\RealkoCommon\Domain\Entity\Estate(
 	1,
 	 2,
     accessToLot: new \Codebros\RealkoCommon\Domain\Entity\AccessToLot(1, 'Access to lot'),
+    characterOfVillage: [
+        new \Codebros\RealkoCommon\Domain\Entity\CharacterOfVillage(
+            \Codebros\RealkoCommon\Domain\Enum\CharacterOfVillage::VILLAGE->value,
+            'Village',
+        ),
+    ]
 );
 
 $converter = new \Codebros\RealkoCommon\Domain\Converter\EstateConverter(
@@ -44,6 +50,12 @@ $expected = [
     'accessToLot' => [
         'id' => 1,
         'title' => 'Access to lot',
+    ],
+    'characterOfVillage' => [
+        [
+            'id' => \Codebros\RealkoCommon\Domain\Enum\CharacterOfVillage::VILLAGE->value,
+            'title' => 'Village',
+        ],
     ],
 ];
 

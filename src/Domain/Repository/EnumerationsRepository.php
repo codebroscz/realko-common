@@ -63,7 +63,10 @@ abstract class EnumerationsRepository
 	];
 
 	/**
-	 * @param class-string $enumType
+     * @template T
+	 * @param class-string<T> $enumType
+     *
+     * @return T
 	 *
 	 * @throws \Codebros\RealkoCommon\Domain\EntityNotFound
 	 */

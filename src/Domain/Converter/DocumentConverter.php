@@ -35,9 +35,9 @@ class DocumentConverter implements DomainConverter
 			$data['id'],
 			$data['position'],
 			$data['dateOfUpdate'] ? new \DateTimeImmutable($data['dateOfUpdate']) : null,
-			$this->enumerationsRepository->find(\Codebros\RealkoCommon\Domain\Enum\TypeOfDocument::class, $data['typeOfDocument'] ?? 0),
+            ($data['typeOfDocument'] ?? null) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\TypeOfDocument::class, $data['typeOfDocument']['id'], $data['typeOfDocument']['title']) : null,
 			$data['description'],
-			$this->enumerationsRepository->find(\Codebros\RealkoCommon\Domain\Enum\DocumentCategory::class, $data['category'] ?? 0),
+            ($data['category'] ?? null) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\DocumentCategory::class, $data['category']['id'], $data['category']['title']) : null,
 		);
 	}
 
