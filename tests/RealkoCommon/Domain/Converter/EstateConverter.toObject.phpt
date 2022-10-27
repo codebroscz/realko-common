@@ -61,7 +61,13 @@ $array = [
             'id' => \Codebros\RealkoCommon\Domain\Enum\CharacterOfVillage::BIG_CITY->value,
             'title' => \Codebros\RealkoCommon\Domain\Enum\CharacterOfVillage::BIG_CITY->name,
         ]
-    ]
+    ],
+    'utilisationByLandUsePlanning' => [
+        [
+            'id' => \Codebros\RealkoCommon\Domain\Enum\UtilisationByLandUsePlanning::PUBLIC->value,
+            'title' => \Codebros\RealkoCommon\Domain\Enum\UtilisationByLandUsePlanning::PUBLIC->name,
+        ]
+    ],
 ];
 
 $entity = $converter->toObject($array);
