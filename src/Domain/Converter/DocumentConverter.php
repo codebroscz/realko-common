@@ -23,9 +23,9 @@ class DocumentConverter implements DomainConverter
 			'id' => $object->externalId(),
 			'position' => $object->position(),
 			'dateOfUpdate' => $object->dateOfUpdate()?->format('c'),
-			'typeOfDocument' => $object->typeOfDocument()->id(),
+			'typeOfDocument' => $object->typeOfDocument()->toArray(),
 			'description' => $object->description(),
-			'category' => $object->documentCategory()?->id(),
+			'category' => $object->documentCategory()?->toArray(),
 		];
 	}
 
