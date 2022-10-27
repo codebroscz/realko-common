@@ -488,7 +488,7 @@ class EstateConverter implements DomainConverter
             $data['numberOfTelephoneLines'],
             $data['numberOfUndergroundFloor'],
             \array_map(static function ($row): ?\Codebros\RealkoCommon\Domain\Entity\Orientation {
-                return new \Codebros\RealkoCommon\Domain\Entity\Orientation(['id'], $id['title']);
+                return new \Codebros\RealkoCommon\Domain\Entity\Orientation($row['id'], $row['title']);
             }, $data['orientation']),
             ($data['parking'] ?? null) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\Parking::class, $data['parking']['id'], $data['parking']['title']) : null,
             \array_map(static function ($row): ?\Codebros\RealkoCommon\Domain\Entity\Parking {
