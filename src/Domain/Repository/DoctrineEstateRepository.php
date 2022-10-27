@@ -10,7 +10,7 @@ class DoctrineEstateRepository implements EstateRepository
 	 */
 	private \Doctrine\ORM\EntityRepository $repository;
 
-	public function __construct(\Doctrine\ORM\EntityManager $entityManager)
+	public function __construct(\Doctrine\ORM\EntityManagerInterface $entityManager)
 	{
 		$this->repository = $entityManager->getRepository(\Codebros\RealkoCommon\Domain\Entity\Estate::class);
 	}
