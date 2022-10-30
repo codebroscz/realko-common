@@ -2,11 +2,15 @@
 
 namespace Codebros\RealkoCommon\Domain\Repository;
 
+/**
+ * @template E
+ * @template T of \Codebros\RealkoCommon\Domain\Entity\Enumeration
+ */
 abstract class EnumerationsRepository
 {
 
 	/**
-	 * @var array<class-string, class-string>
+	 * @var array<class-string<E>, class-string<T>>
 	 */
 	protected array $knownEnums = [
 		\Codebros\RealkoCommon\Domain\Enum\AccessToLot::class => \Codebros\RealkoCommon\Domain\Entity\AccessToLot::class,
@@ -63,28 +67,25 @@ abstract class EnumerationsRepository
 	];
 
 	/**
-     * @template E of \Codebros\RealkoCommon\Domain\Entity\Enumeration
 	 * @param class-string<E> $enumType
      *
-     * @phpstan-return E
+     * @phpstan-return T
 	 *
 	 * @throws \Codebros\RealkoCommon\Domain\EntityNotFound
 	 */
 	abstract public function get(string $enumType, int $id): \Codebros\RealkoCommon\Domain\Entity\Enumeration;
 
 	/**
-     * @template E of \Codebros\RealkoCommon\Domain\Entity\Enumeration
 	 * @param class-string<E> $enumType
      *
-     * @phpstan-return E
+     * @phpstan-return T
 	 */
 	abstract public function find(string $enumType, int $id): ?\Codebros\RealkoCommon\Domain\Entity\Enumeration;
 
 	/**
-	 * @template E of \Codebros\RealkoCommon\Domain\Entity\Enumeration
 	 * @param class-string<E> $enumType
      *
-	 * @phpstan-return E
+	 * @phpstan-return T
 	 */
 	abstract public function findOrCreateNew(string $enumType, int $id, string $title): \Codebros\RealkoCommon\Domain\Entity\Enumeration;
 

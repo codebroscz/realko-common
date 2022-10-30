@@ -51,7 +51,7 @@ class Estate
 	#[ORM\ManyToMany(targetEntity: ExternalDocument::class, cascade: ['persist'])]
 	protected \Doctrine\Common\Collections\Collection $externalDocuments;
 
-	#[ORM\ManyToOne(targetEntity: 'AccessToLot')]
+	#[ORM\ManyToOne(targetEntity: AccessToLot::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\AccessToLot $accessToLot = null;
 
@@ -130,7 +130,7 @@ class Estate
 	#[ORM\Column(type: 'datetime_immutable', nullable: true)]
 	protected ?\DateTimeImmutable $auctionDateTour2 = null;
 
-	#[ORM\ManyToOne(targetEntity: 'AuctionKind')]
+	#[ORM\ManyToOne(targetEntity: AuctionKind::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\AuctionKind $auctionKind = null;
 
@@ -152,14 +152,14 @@ class Estate
 	#[ORM\Column(type: 'boolean', nullable: true)]
 	protected ?bool $blurLocationOnServers = null;
 
-	#[ORM\ManyToOne(targetEntity: 'BuildingLien')]
+	#[ORM\ManyToOne(targetEntity: BuildingLien::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\BuildingLien $buildingLien = null;
 
 	#[ORM\Column(type: 'boolean', nullable: true)]
 	protected ?bool $cableTv = null;
 
-	#[ORM\ManyToOne(targetEntity: 'Canalization')]
+	#[ORM\ManyToOne(targetEntity: Canalization::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Canalization $canalization = null;
 
@@ -181,7 +181,7 @@ class Estate
 	#[ORM\Column(type: 'boolean', nullable: true)]
 	protected ?bool $constructionOnLot = null;
 
-	#[ORM\ManyToOne(targetEntity: 'CoreOfApartment')]
+	#[ORM\ManyToOne(targetEntity: CoreOfApartment::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\CoreOfApartment $coreOfApartment = null;
 
@@ -191,7 +191,7 @@ class Estate
 	#[ORM\Column(type: 'integer', nullable: true)]
 	protected ?int $craneLoad = null;
 
-	#[ORM\ManyToOne(targetEntity: 'Currency')]
+	#[ORM\ManyToOne(targetEntity: Currency::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Currency $currency = null;
 
@@ -216,7 +216,7 @@ class Estate
 	#[ORM\Column(type: 'text', nullable: true)]
 	protected ?string $descriptionOtherslanguages;
 
-	#[ORM\ManyToOne(targetEntity: 'Disposition')]
+	#[ORM\ManyToOne(targetEntity: Disposition::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Disposition $disposition = null;
 
@@ -229,15 +229,15 @@ class Estate
 	#[ORM\Column(type: 'boolean', nullable: true)]
 	protected ?bool $duplex = null;
 
-	#[ORM\ManyToOne(targetEntity: 'EcologicalLoad')]
+	#[ORM\ManyToOne(targetEntity: EcologicalLoad::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\EcologicalLoad $ecologicalLoad = null;
 
-	#[ORM\ManyToOne(targetEntity: 'Electricity')]
+	#[ORM\ManyToOne(targetEntity: Electricity::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Electricity $electricity = null;
 
-	#[ORM\ManyToOne(targetEntity: 'ElectricityOnLot')]
+	#[ORM\ManyToOne(targetEntity: ElectricityOnLot::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\ElectricityOnLot $electricityOnLot = null;
 
@@ -247,18 +247,18 @@ class Estate
 	#[ORM\Column(type: 'integer', nullable: true)]
 	protected ?int $elevatorLoad = null;
 
-	#[ORM\ManyToOne(targetEntity: 'EnergyPerformanceRating')]
+	#[ORM\ManyToOne(targetEntity: EnergyPerformanceRating::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\EnergyPerformanceRating $energyPerformanceRating = null;
 
 	#[ORM\Column(type: 'float', nullable: true)]
 	protected ?float $energyPerformanceSummary = null;
 
-	#[ORM\ManyToOne(targetEntity: 'EnergyPerformanceCertificate')]
+	#[ORM\ManyToOne(targetEntity: EnergyPerformanceCertificate::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\EnergyPerformanceCertificate $energyPerformanceCertificate = null;
 
-	#[ORM\ManyToOne(targetEntity: 'Floor')]
+	#[ORM\ManyToOne(targetEntity: Floor::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Floor $floor = null;
 
@@ -274,7 +274,7 @@ class Estate
 	#[ORM\Column(type: 'boolean', nullable: true)]
 	protected ?bool $freeImmediately = null;
 
-	#[ORM\ManyToOne(targetEntity: 'Furnished')]
+	#[ORM\ManyToOne(targetEntity: Furnished::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Furnished $furnished = null;
 
@@ -290,7 +290,7 @@ class Estate
 	#[ORM\Column(type: 'boolean', nullable: true)]
 	protected ?bool $garden = null;
 
-	#[ORM\ManyToOne(targetEntity: 'Gas')]
+	#[ORM\ManyToOne(targetEntity: Gas::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Gas $gas = null;
 
@@ -337,15 +337,15 @@ class Estate
 	#[ORM\InverseJoinColumn(name: 'infrastructure_id', referencedColumnName: 'id')]
 	protected \Doctrine\Common\Collections\Collection $infrastructure;
 
-	#[ORM\ManyToOne(targetEntity: 'InternetConnection')]
+	#[ORM\ManyToOne(targetEntity: InternetConnection::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\InternetConnection $internetConnection = null;
 
-	#[ORM\ManyToOne(targetEntity: 'Category')]
+	#[ORM\ManyToOne(targetEntity: Category::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Category $category = null;
 
-	#[ORM\ManyToOne(targetEntity: 'KindOfPlotNumbers')]
+	#[ORM\ManyToOne(targetEntity: KindOfPlotNumbers::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\KindOfPlotNumbers $kindOfPlotNumbers = null;
 
@@ -355,7 +355,7 @@ class Estate
 	#[ORM\OneToOne(targetEntity: Location::class, cascade: ['persist'])]
 	protected ?Location $location = null;
 
-	#[ORM\ManyToOne(targetEntity: 'Locality')]
+	#[ORM\ManyToOne(targetEntity: Locality::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Locality $locality = null;
 
@@ -419,7 +419,7 @@ class Estate
 	#[ORM\InverseJoinColumn(name: 'orientation_id', referencedColumnName: 'id')]
 	protected \Doctrine\Common\Collections\Collection $orientation;
 
-	#[ORM\ManyToOne(targetEntity: 'Parking')]
+	#[ORM\ManyToOne(targetEntity: Parking::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Parking $parking = null;
 
@@ -432,11 +432,11 @@ class Estate
 	#[ORM\Column(type: 'boolean', nullable: true)]
 	protected ?bool $pcNetLines = null;
 
-	#[ORM\ManyToOne(targetEntity: 'PeriodOfChargesAndServices')]
+	#[ORM\ManyToOne(targetEntity: PeriodOfChargesAndServices::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\PeriodOfChargesAndServices $periodOfChargesAndServices = null;
 
-	#[ORM\ManyToOne(targetEntity: 'PeriodOfPrice')]
+	#[ORM\ManyToOne(targetEntity: PeriodOfPrice::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\PeriodOfPrice $periodOfPrice = null;
 
@@ -467,7 +467,7 @@ class Estate
 	#[ORM\Column(type: 'boolean', nullable: true)]
 	protected ?bool $priceWithChargesAndServices = null;
 
-	#[ORM\ManyToOne(targetEntity: 'ProtectedLandscapeArea')]
+	#[ORM\ManyToOne(targetEntity: ProtectedLandscapeArea::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\ProtectedLandscapeArea $protectedLandscapeArea = null;
 
@@ -483,7 +483,7 @@ class Estate
 	#[ORM\Column(type: 'string', nullable: true)]
 	protected ?string $registrationNumber = null;
 
-	#[ORM\ManyToOne(targetEntity: 'RoadType')]
+	#[ORM\ManyToOne(targetEntity: RoadType::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\RoadType $roadType = null;
 
@@ -496,7 +496,7 @@ class Estate
 	#[ORM\Column(type: 'boolean', nullable: true)]
 	protected ?bool $shortTermLease = null;
 
-	#[ORM\ManyToOne(targetEntity: 'SocialFacilities')]
+	#[ORM\ManyToOne(targetEntity: SocialFacilities::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\SocialFacilities $socialFacilities = null;
 
@@ -506,19 +506,19 @@ class Estate
 	#[ORM\InverseJoinColumn(name: 'source_of_hot_water_id', referencedColumnName: 'id')]
 	protected \Doctrine\Common\Collections\Collection $sourceOfHotWater;
 
-	#[ORM\ManyToOne(targetEntity: 'StatusOfCommission')]
+	#[ORM\ManyToOne(targetEntity: StatusOfCommission::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\StatusOfCommission $statusOfCommission = null;
 
-	#[ORM\ManyToOne(targetEntity: 'StatusOfEstate')]
+	#[ORM\ManyToOne(targetEntity: StatusOfEstate::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\StatusOfEstate $statusOfEstate = null;
 
-	#[ORM\ManyToOne(targetEntity: 'StructureOfBuilding')]
+	#[ORM\ManyToOne(targetEntity: StructureOfBuilding::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\StructureOfBuilding $structureOfBuilding = null;
 
-	#[ORM\ManyToOne(targetEntity: 'SubtypeOfRealEstate')]
+	#[ORM\ManyToOne(targetEntity: SubtypeOfRealEstate::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\SubtypeOfRealEstate $subtypeOfRealEstate = null;
 
@@ -565,22 +565,22 @@ class Estate
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\TypeOfOwnership $typeOfOwnership = null;
 
-	#[ORM\ManyToOne(targetEntity: 'TypeOfPrice')]
+	#[ORM\ManyToOne(targetEntity: TypeOfPrice::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\TypeOfPrice $typeOfPrice = null;
 
-	#[ORM\ManyToOne(targetEntity: 'TypeOfRealEstate')]
+	#[ORM\ManyToOne(targetEntity: TypeOfRealEstate::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\TypeOfRealEstate $typeOfRealEstate = null;
 
-	#[ORM\ManyToOne(targetEntity: 'TypeOfRealEstateCadastre')]
+	#[ORM\ManyToOne(targetEntity: TypeOfRealEstateCadastre::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\TypeOfRealEstateCadastre $typeOfRealEstateCadastre = null;
 
 	#[ORM\Column(type: 'string', nullable: true)]
 	protected ?string $urlEstateDetail = null;
 
-	#[ORM\ManyToOne(targetEntity: 'Utilisation')]
+	#[ORM\ManyToOne(targetEntity: Utilisation::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Utilisation $utilisation = null;
 
@@ -596,7 +596,7 @@ class Estate
 	#[ORM\Column(type: 'datetime_immutable', nullable: true)]
 	protected ?\DateTimeImmutable $validityOfTreatyTo = null;
 
-	#[ORM\ManyToOne(targetEntity: 'Water')]
+	#[ORM\ManyToOne(targetEntity: Water::class)]
 	#[ORM\JoinColumn(nullable: true)]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Water $water = null;
 

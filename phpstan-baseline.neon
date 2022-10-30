@@ -1,0 +1,266 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Parameter \\#4 \\$typeOfDocument of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Document constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\TypeOfDocument\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/DocumentConverter.php
+
+		-
+			message: "#^Parameter \\#6 \\$documentCategory of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Document constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\DocumentCategory\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/DocumentConverter.php
+
+		-
+			message: "#^Anonymous function should return Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\CharacterOfVillage but returns Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Anonymous function should return Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Infrastructure but returns Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Anonymous function should return Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Orientation but returns Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Anonymous function should return Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Parking but returns Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Anonymous function should return Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\ProtectionZone but returns Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Anonymous function should return Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\SourceOfHotWater but returns Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Anonymous function should return Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\TransportAccessibility but returns Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Anonymous function should return Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\UtilisationByLandUsePlanning but returns Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of function array_map expects \\(callable\\(Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Document\\)\\: mixed\\)\\|null, array\\{Codebros\\\\RealkoCommon\\\\Domain\\\\Converter\\\\ExternalDocumentConverter, 'toArray'\\} given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#1 \\$locationSource of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Heating2 constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\LocationSource\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#116 \\$parking of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Parking\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#119 \\$periodOfChargesAndServices of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\PeriodOfChargesAndServices\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#120 \\$periodOfPrice of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\PeriodOfPrice\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#130 \\$protectedLandscapeArea of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\ProtectedLandscapeArea\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#134 \\$roadType of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\RoadType\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#138 \\$socialFacilities of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\SocialFacilities\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#140 \\$statusOfCommission of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\StatusOfCommission\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#141 \\$statusOfEstate of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\StatusOfEstate\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#142 \\$structureOfBuilding of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\StructureOfBuilding\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#143 \\$subtypeOfRealEstate of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\SubtypeOfRealEstate\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#152 \\$typeOfCommission of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\TypeOfCommission\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#153 \\$typeOfContract of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\TypeOfContract\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#154 \\$typeOfChargesAndServices of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\TypeOfChargesAndServices\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#155 \\$typeOfOwnership of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\TypeOfOwnership\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#156 \\$typeOfPrice of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\TypeOfPrice\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#157 \\$typeOfRealEstate of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\TypeOfRealEstate\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#158 \\$typeOfRealEstateCadastre of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\TypeOfRealEstateCadastre\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#160 \\$utilisation of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Utilisation\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#164 \\$water of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Water\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#2 \\$source of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Heating2 constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Source\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#3 \\$heatingElement of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Heating2 constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\HeatingElement\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#32 \\$auctionKind of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\AuctionKind\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#39 \\$buildingLien of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\BuildingLien\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#41 \\$canalization of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Canalization\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#48 \\$coreOfApartment of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\CoreOfApartment\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#51 \\$currency of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Currency\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#59 \\$disposition of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Disposition\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#6 \\$accessToLot of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\AccessToLot\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#63 \\$ecologicalLoad of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\EcologicalLoad\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#64 \\$electricity of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Electricity\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#65 \\$electricityOnLot of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\ElectricityOnLot\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#68 \\$energyPerformanceRating of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\EnergyPerformanceRating\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#70 \\$energyPerformanceCertificate of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\EnergyPerformanceCertificate\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#71 \\$floor of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Floor\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#76 \\$furnished of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Furnished\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#79 \\$gas of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Gas\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#82 \\$heating of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Heating\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#91 \\$internetConnection of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\InternetConnection\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#92 \\$category of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Category\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#93 \\$kindOfPlotNumbers of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\KindOfPlotNumbers\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
+			message: "#^Parameter \\#96 \\$locality of class Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Estate constructor expects Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Locality\\|null, Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\|null given\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php

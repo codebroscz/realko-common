@@ -2,11 +2,15 @@
 
 namespace Codebros\RealkoCommon\Domain\Repository;
 
+/**
+ * @template E of object
+ * @template T of \Codebros\RealkoCommon\Domain\Entity\Enumeration
+ */
 class DoctrineEnumerationsRepository extends EnumerationsRepository
 {
 
 	/**
-	 * @var array<class-string, \Codebros\RealkoCommon\Domain\Entity\Enumeration[]>
+	 * @var array<class-string<E>, array<int, T>>
 	 */
 	private ?array $cache = null;
 
@@ -40,7 +44,7 @@ class DoctrineEnumerationsRepository extends EnumerationsRepository
 	}
 
 	/**
-	 * @param class-string $enumType
+     * @inheritDoc
 	 */
 	public function get(string $enumType, int $id): \Codebros\RealkoCommon\Domain\Entity\Enumeration
 	{
@@ -58,7 +62,7 @@ class DoctrineEnumerationsRepository extends EnumerationsRepository
 	}
 
 	/**
-	 * @param class-string $enumType
+	 * @inheritDoc
 	 */
 	public function find(string $enumType, int $id): ?\Codebros\RealkoCommon\Domain\Entity\Enumeration
 	{
@@ -76,9 +80,7 @@ class DoctrineEnumerationsRepository extends EnumerationsRepository
 	}
 
 	/**
-	 * @template E of \Codebros\RealkoCommon\Domain\Entity\Enumeration
-	 * @param class-string<E> $enumType
-	 * @phpstan-return E
+	 * @inheritDoc
 	 */
 	public function findOrCreateNew(string $enumType, int $id, string $title): \Codebros\RealkoCommon\Domain\Entity\Enumeration
 	{
@@ -89,8 +91,13 @@ class DoctrineEnumerationsRepository extends EnumerationsRepository
 		$this->precacheEnumerations();
 
 		if ( ! \array_key_exists($id, $this->cache[$enumType] ?? [])) {
-			/** @var \Codebros\RealkoCommon\Domain\Entity\Enumeration $enum */
-			$enum = new $this->knownEnums[$enumType]($id, $title);
+            $class = $this->enumToEntity($enumType);
+
+			/**
+             * @phpstan-var T $enum
+             * @var \Codebros\RealkoCommon\Domain\Entity\Enumeration $enum
+             */
+			$enum = new $class($id, $title);
 
 			$this->entityManager->persist($enum);
 
@@ -99,5 +106,15 @@ class DoctrineEnumerationsRepository extends EnumerationsRepository
 
 		return $this->cache[$enumType][$id];
 	}
+
+    /**
+     * @phpstan-param class-string<E> $enumType
+     *
+     * @phpstan-return class-string<T>
+     */
+    private function enumToEntity(string $enumType): string
+    {
+        return $this->knownEnums[$enumType];
+    }
 
 }

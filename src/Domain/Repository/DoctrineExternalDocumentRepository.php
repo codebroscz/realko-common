@@ -17,7 +17,7 @@ class DoctrineExternalDocumentRepository implements ExternalDocumentRepository
 		$this->repository = $this->entityManager->getRepository(\Codebros\RealkoCommon\Domain\Entity\ExternalDocument::class);
 	}
 
-	public function findById(int $id): ?\Codebros\RealkoCommon\Domain\Entity\Document
+	public function findById(int $id): ?\Codebros\RealkoCommon\Domain\Entity\ExternalDocument
 	{
 		return $this->repository->find($id);
 	}

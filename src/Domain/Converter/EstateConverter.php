@@ -439,7 +439,7 @@ class EstateConverter implements DomainConverter
             $data['freeFrom'],
             $data['freeImmediately'],
             ($data['furnished'] ?? null) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\Furnished::class, $data['furnished']['id'], $data['furnished']['title']) : null,
-            \array_map(static fn($row): ?\Codebros\RealkoCommon\Domain\Entity\Furniture => new \Codebros\RealkoCommon\Domain\Entity\Furniture($row['id'], $row['title']), $data['furniture']),
+            \array_map(static fn($row): \Codebros\RealkoCommon\Domain\Entity\Furniture => new \Codebros\RealkoCommon\Domain\Entity\Furniture($row['id'], $row['title']), $data['furniture']),
             $data['garden'],
             ($data['gas'] ?? null) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\Gas::class, $data['gas']['id'], $data['gas']['title']) : null,
             $data['gpsLat'],
@@ -454,13 +454,13 @@ class EstateConverter implements DomainConverter
             }, $data['heating2']),
             $data['heatingComment'],
             $data['householdAppliances'],
-            \array_map(function ($row): ?\Codebros\RealkoCommon\Domain\Entity\CharacterOfVillage {
+            \array_map(function ($row): \Codebros\RealkoCommon\Domain\Entity\CharacterOfVillage {
                 return $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\CharacterOfVillage::class, $row['id'], $row['title']);
             }, $data['characterOfVillage']),
             $data['chargesAndServices'],
             $data['chargesAndServicesComment'],
             $data['children'],
-            \array_map(function ($row): ?\Codebros\RealkoCommon\Domain\Entity\Infrastructure {
+            \array_map(function ($row): \Codebros\RealkoCommon\Domain\Entity\Infrastructure {
                 return $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\Infrastructure::class, $row['id'], $row['title']);
             }, $data['infrastructure']),
             ($data['internetConnection'] ?? null) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\InternetConnection::class, $data['internetConnection']['id'], $data['internetConnection']['title']) : null,
@@ -487,11 +487,11 @@ class EstateConverter implements DomainConverter
             $data['numberOfRooms'],
             $data['numberOfTelephoneLines'],
             $data['numberOfUndergroundFloor'],
-            \array_map(function ($row): ?\Codebros\RealkoCommon\Domain\Entity\Orientation {
+            \array_map(function ($row): \Codebros\RealkoCommon\Domain\Entity\Orientation {
                 return $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\Orientation::class, $row['id'], $row['title']);
             }, $data['orientation']),
             ($data['parking'] ?? null) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\Parking::class, $data['parking']['id'], $data['parking']['title']) : null,
-            \array_map(function ($row): ?\Codebros\RealkoCommon\Domain\Entity\Parking {
+            \array_map(function ($row): \Codebros\RealkoCommon\Domain\Entity\Parking {
                 return $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\Parking::class, $row['id'], $row['title']);
             }, $data['parkingMulti']),
             $data['pcNetLines'],
@@ -507,7 +507,7 @@ class EstateConverter implements DomainConverter
             $data['priceToNegotiation'],
             $data['priceWithChargesAndServices'],
             ($data['protectedLandscapeArea'] ?? null) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\ProtectedLandscapeArea::class, $data['protectedLandscapeArea']['id'], $data['protectedLandscapeArea']['title']) : null,
-            \array_map(function ($row): ?\Codebros\RealkoCommon\Domain\Entity\ProtectionZone {
+            \array_map(function ($row): \Codebros\RealkoCommon\Domain\Entity\ProtectionZone {
                 return $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\ProtectionZone::class, $row['id'], $row['title']);
             }, $data['protectionZone']),
             $data['reception'],
@@ -517,7 +517,7 @@ class EstateConverter implements DomainConverter
             $data['share'],
             $data['shortTermLease'],
             ($data['socialFacilities'] ?? null) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\SocialFacilities::class, $data['socialFacilities']['id'], $data['socialFacilities']['title']) : null,
-            \array_map(function ($row): ?\Codebros\RealkoCommon\Domain\Entity\SourceOfHotWater {
+            \array_map(function ($row): \Codebros\RealkoCommon\Domain\Entity\SourceOfHotWater {
                 return $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\SourceOfHotWater::class, $row['id'], $row['title']);
             }, $data['sourceOfHotWater']),
             ($data['statusOfCommission'] ?? null) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\StatusOfCommission::class, $data['statusOfCommission']['id'], $data['statusOfCommission']['title']) : null,
@@ -530,7 +530,7 @@ class EstateConverter implements DomainConverter
             $data['title'],
             null,
             $data['totalOfFloor'],
-            \array_map(function ($row): ?\Codebros\RealkoCommon\Domain\Entity\TransportAccessibility {
+            \array_map(function ($row): \Codebros\RealkoCommon\Domain\Entity\TransportAccessibility {
                 return $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\TransportAccessibility::class, $row['id'], $row['title']);
             }, $data['transportAccessibility']),
             $data['turnkey'],
@@ -543,7 +543,7 @@ class EstateConverter implements DomainConverter
             ($data['typeOfRealEstateCadastre'] ?? null) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\TypeOfRealEstateCadastre::class, $data['typeOfRealEstateCadastre']['id'], $data['typeOfRealEstateCadastre']['title']) : null,
             $data['urlEstateDetail'],
             ($data['utilisation'] ?? null) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\Utilisation::class, $data['utilisation']['id'], $data['utilisation']['title']) : null,
-            \array_map(function ($row): ?\Codebros\RealkoCommon\Domain\Entity\UtilisationByLandUsePlanning {
+            \array_map(function ($row): \Codebros\RealkoCommon\Domain\Entity\UtilisationByLandUsePlanning {
                 return $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\UtilisationByLandUsePlanning::class, $row['id'], $row['title']);
             }, $data['utilisationByLandUsePlanning']),
             $data['validityOfTreatyFrom'] ? new \DateTimeImmutable($data['validityOfTreatyFrom']) : null,

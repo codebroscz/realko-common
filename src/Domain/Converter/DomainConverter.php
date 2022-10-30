@@ -3,7 +3,7 @@
 namespace Codebros\RealkoCommon\Domain\Converter;
 
 /**
- * @template T of \Codebros\RealkoCommon\Domain\Entity\Entity
+ * @template T of object
  */
 interface DomainConverter
 {
@@ -16,7 +16,7 @@ interface DomainConverter
 	public function toArray(object $object): array;
 
 	/**
-	 * @param array<string, {id: int, ...mixed}> $data
+	 * @param array<string, mixed> $data
 	 *
 	 * @return T
 	 */
