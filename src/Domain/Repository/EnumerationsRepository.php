@@ -63,23 +63,27 @@ abstract class EnumerationsRepository
 	];
 
 	/**
-     * @template T
-	 * @param class-string<T> $enumType
+     * @template E of \Codebros\RealkoCommon\Domain\Entity\Enumeration
+	 * @param class-string<E> $enumType
      *
-     * @return T
+     * @phpstan-return E
 	 *
 	 * @throws \Codebros\RealkoCommon\Domain\EntityNotFound
 	 */
 	abstract public function get(string $enumType, int $id): \Codebros\RealkoCommon\Domain\Entity\Enumeration;
 
 	/**
-	 * @param class-string $enumType
+     * @template E of \Codebros\RealkoCommon\Domain\Entity\Enumeration
+	 * @param class-string<E> $enumType
+     *
+     * @phpstan-return E
 	 */
 	abstract public function find(string $enumType, int $id): ?\Codebros\RealkoCommon\Domain\Entity\Enumeration;
 
 	/**
 	 * @template E of \Codebros\RealkoCommon\Domain\Entity\Enumeration
 	 * @param class-string<E> $enumType
+     *
 	 * @phpstan-return E
 	 */
 	abstract public function findOrCreateNew(string $enumType, int $id, string $title): \Codebros\RealkoCommon\Domain\Entity\Enumeration;
