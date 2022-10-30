@@ -439,7 +439,9 @@ class EstateConverter implements DomainConverter
             $data['freeFrom'],
             $data['freeImmediately'],
             ($data['furnished'] ?? null) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\Furnished::class, $data['furnished']['id'], $data['furnished']['title']) : null,
-            \array_map(static fn($row): \Codebros\RealkoCommon\Domain\Entity\Furniture => new \Codebros\RealkoCommon\Domain\Entity\Furniture($row['id'], $row['title']), $data['furniture']),
+            \array_map(function ($row): \Codebros\RealkoCommon\Domain\Entity\Furniture {
+                return $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\Furniture::class, $row['id'], $row['title']);
+            }, $data['furniture']),
             $data['garden'],
             ($data['gas'] ?? null) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\Gas::class, $data['gas']['id'], $data['gas']['title']) : null,
             $data['gpsLat'],
