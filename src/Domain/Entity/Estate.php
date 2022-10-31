@@ -30,7 +30,7 @@ class Estate
 	#[ORM\JoinTable(name: 'realko_estate_photos')]
 	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	#[ORM\InverseJoinColumn(name: 'photo_id', referencedColumnName: 'id', unique: true)]
-	#[ORM\ManyToMany(targetEntity: Document::class, cascade: ['persist'], )]
+	#[ORM\ManyToMany(targetEntity: Document::class, cascade: ['persist'])]
 	protected \Doctrine\Common\Collections\Collection $photos;
 
 	/**
@@ -284,7 +284,7 @@ class Estate
 	#[ORM\ManyToMany(targetEntity: Furniture::class, cascade: ['persist'])]
 	#[ORM\JoinTable(name: 'realko_estate_furniture')]
 	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
-	#[ORM\InverseJoinColumn(name: 'furniture_id', referencedColumnName: 'id')]
+	#[ORM\InverseJoinColumn(name: 'furniture_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	protected \Doctrine\Common\Collections\Collection $furniture;
 
 	#[ORM\Column(type: 'boolean', nullable: true)]
@@ -319,7 +319,7 @@ class Estate
 	#[ORM\ManyToMany(targetEntity: CharacterOfVillage::class, cascade: ['persist'])]
 	#[ORM\JoinTable(name: 'realko_estate_character_of_village')]
 	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
-	#[ORM\InverseJoinColumn(name: 'character_of_village_id', referencedColumnName: 'id')]
+	#[ORM\InverseJoinColumn(name: 'character_of_village_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	protected \Doctrine\Common\Collections\Collection $characterOfVillage;
 
 	#[ORM\Column(type: 'float', nullable: true)]
@@ -334,7 +334,7 @@ class Estate
 	#[ORM\ManyToMany(targetEntity: Infrastructure::class, cascade: ['persist'])]
 	#[ORM\JoinTable(name: 'realko_estate_infrastructure')]
 	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
-	#[ORM\InverseJoinColumn(name: 'infrastructure_id', referencedColumnName: 'id')]
+	#[ORM\InverseJoinColumn(name: 'infrastructure_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	protected \Doctrine\Common\Collections\Collection $infrastructure;
 
 	#[ORM\ManyToOne(targetEntity: InternetConnection::class)]
@@ -416,7 +416,7 @@ class Estate
 	#[ORM\ManyToMany(targetEntity: Orientation::class, cascade: ['persist'])]
 	#[ORM\JoinTable(name: 'realko_estate_orientation')]
 	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
-	#[ORM\InverseJoinColumn(name: 'orientation_id', referencedColumnName: 'id')]
+	#[ORM\InverseJoinColumn(name: 'orientation_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	protected \Doctrine\Common\Collections\Collection $orientation;
 
 	#[ORM\ManyToOne(targetEntity: Parking::class)]
@@ -426,7 +426,7 @@ class Estate
 	#[ORM\ManyToMany(targetEntity: Parking::class, cascade: ['persist'])]
 	#[ORM\JoinTable(name: 'realko_estate_parking')]
 	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
-	#[ORM\InverseJoinColumn(name: 'parking_id', referencedColumnName: 'id')]
+	#[ORM\InverseJoinColumn(name: 'parking_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	protected \Doctrine\Common\Collections\Collection $parkingMulti;
 
 	#[ORM\Column(type: 'boolean', nullable: true)]
@@ -474,7 +474,7 @@ class Estate
 	#[ORM\ManyToMany(targetEntity: ProtectionZone::class, cascade: ['persist'])]
 	#[ORM\JoinTable(name: 'realko_estate_protection_zone')]
 	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
-	#[ORM\InverseJoinColumn(name: 'protection_zone_id', referencedColumnName: 'id')]
+	#[ORM\InverseJoinColumn(name: 'protection_zone_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	protected \Doctrine\Common\Collections\Collection $protectionZone;
 
 	#[ORM\Column(type: 'boolean', nullable: true)]
@@ -503,7 +503,7 @@ class Estate
 	#[ORM\ManyToMany(targetEntity: SourceOfHotWater::class, cascade: ['persist'])]
 	#[ORM\JoinTable(name: 'realko_estate_source_of_hot_water')]
 	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
-	#[ORM\InverseJoinColumn(name: 'source_of_hot_water_id', referencedColumnName: 'id')]
+	#[ORM\InverseJoinColumn(name: 'source_of_hot_water_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	protected \Doctrine\Common\Collections\Collection $sourceOfHotWater;
 
 	#[ORM\ManyToOne(targetEntity: StatusOfCommission::class)]
@@ -543,7 +543,7 @@ class Estate
 	#[ORM\ManyToMany(targetEntity: TransportAccessibility::class, cascade: ['persist'])]
 	#[ORM\JoinTable(name: 'realko_estate_transport_accessibility')]
 	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
-	#[ORM\InverseJoinColumn(name: 'transport_acessibility_id', referencedColumnName: 'id')]
+	#[ORM\InverseJoinColumn(name: 'transport_acessibility_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	protected \Doctrine\Common\Collections\Collection $transportAccessibility;
 
 	#[ORM\Column(type: 'boolean', nullable: true)]
@@ -587,7 +587,7 @@ class Estate
 	#[ORM\ManyToMany(targetEntity: UtilisationByLandUsePlanning::class, cascade: ['persist'])]
 	#[ORM\JoinTable(name: 'realko_utilisation_by_land_use_planning')]
 	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
-	#[ORM\InverseJoinColumn(name: 'utilisation_by_land_use_planning_id', referencedColumnName: 'id')]
+	#[ORM\InverseJoinColumn(name: 'utilisation_by_land_use_planning_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	protected \Doctrine\Common\Collections\Collection $utilisationByLandUsePlanning;
 
 	#[ORM\Column(type: 'datetime_immutable', nullable: true)]
