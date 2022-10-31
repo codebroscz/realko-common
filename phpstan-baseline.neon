@@ -16,6 +16,11 @@ parameters:
 			path: src/Domain/Converter/EstateConverter.php
 
 		-
+			message: "#^Anonymous function should return Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Furniture but returns Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\.$#"
+			count: 1
+			path: src/Domain/Converter/EstateConverter.php
+
+		-
 			message: "#^Anonymous function should return Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Infrastructure but returns Codebros\\\\RealkoCommon\\\\Domain\\\\Entity\\\\Enumeration\\.$#"
 			count: 1
 			path: src/Domain/Converter/EstateConverter.php
