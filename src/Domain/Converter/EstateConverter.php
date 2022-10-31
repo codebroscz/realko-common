@@ -436,7 +436,7 @@ class EstateConverter implements DomainConverter
             ($data['floor'] ?? null) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\Floor::class, $data['floor']['id'], $data['floor']['title']) : null,
             $data['foreigners'],
             $data['foreignersComment'],
-            $data['freeFrom'],
+            $data['freeFrom'] ? new \DateTimeImmutable($data['freeFrom']) : null,
             $data['freeImmediately'],
             ($data['furnished'] ?? null) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\Furnished::class, $data['furnished']['id'], $data['furnished']['title']) : null,
             \array_map(function ($row): \Codebros\RealkoCommon\Domain\Entity\Furniture {
