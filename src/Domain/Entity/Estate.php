@@ -28,16 +28,16 @@ class Estate
 	 * @var \Doctrine\Common\Collections\Collection<Document>
 	 */
 	#[ORM\JoinTable(name: 'realko_estate_photos')]
-	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id')]
+	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	#[ORM\InverseJoinColumn(name: 'photo_id', referencedColumnName: 'id', unique: true)]
-	#[ORM\ManyToMany(targetEntity: Document::class, cascade: ['persist'])]
+	#[ORM\ManyToMany(targetEntity: Document::class, cascade: ['persist'], )]
 	protected \Doctrine\Common\Collections\Collection $photos;
 
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<Document>
 	 */
 	#[ORM\JoinTable(name: 'realko_estate_documents')]
-	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id')]
+	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	#[ORM\InverseJoinColumn(name: 'document_id', referencedColumnName: 'id', unique: true)]
 	#[ORM\ManyToMany(targetEntity: Document::class, cascade: ['persist'])]
 	protected \Doctrine\Common\Collections\Collection $documents;
@@ -46,13 +46,13 @@ class Estate
 	 * @var \Doctrine\Common\Collections\Collection<ExternalDocument>
 	 */
 	#[ORM\JoinTable(name: 'realko_estate_external_documents')]
-	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id')]
+	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	#[ORM\InverseJoinColumn(name: 'external_document_id', referencedColumnName: 'id', unique: true)]
 	#[ORM\ManyToMany(targetEntity: ExternalDocument::class, cascade: ['persist'])]
 	protected \Doctrine\Common\Collections\Collection $externalDocuments;
 
 	#[ORM\ManyToOne(targetEntity: AccessToLot::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\AccessToLot $accessToLot = null;
 
 	#[ORM\Column(type: 'boolean', nullable: true)]
@@ -131,7 +131,7 @@ class Estate
 	protected ?\DateTimeImmutable $auctionDateTour2 = null;
 
 	#[ORM\ManyToOne(targetEntity: AuctionKind::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\AuctionKind $auctionKind = null;
 
 	#[ORM\Column(type: 'string', nullable: true)]
@@ -153,14 +153,14 @@ class Estate
 	protected ?bool $blurLocationOnServers = null;
 
 	#[ORM\ManyToOne(targetEntity: BuildingLien::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\BuildingLien $buildingLien = null;
 
 	#[ORM\Column(type: 'boolean', nullable: true)]
 	protected ?bool $cableTv = null;
 
 	#[ORM\ManyToOne(targetEntity: Canalization::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Canalization $canalization = null;
 
 	#[ORM\Column(type: 'integer', nullable: true)]
@@ -182,7 +182,7 @@ class Estate
 	protected ?bool $constructionOnLot = null;
 
 	#[ORM\ManyToOne(targetEntity: CoreOfApartment::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\CoreOfApartment $coreOfApartment = null;
 
 	#[ORM\Column(type: 'boolean', nullable: true)]
@@ -192,7 +192,7 @@ class Estate
 	protected ?int $craneLoad = null;
 
 	#[ORM\ManyToOne(targetEntity: Currency::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Currency $currency = null;
 
 	#[ORM\Column(type: 'datetime_immutable', nullable: true)]
@@ -217,7 +217,7 @@ class Estate
 	protected ?string $descriptionOtherslanguages;
 
 	#[ORM\ManyToOne(targetEntity: Disposition::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Disposition $disposition = null;
 
 	#[ORM\Column(type: 'string', nullable: true)]
@@ -230,15 +230,15 @@ class Estate
 	protected ?bool $duplex = null;
 
 	#[ORM\ManyToOne(targetEntity: EcologicalLoad::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\EcologicalLoad $ecologicalLoad = null;
 
 	#[ORM\ManyToOne(targetEntity: Electricity::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Electricity $electricity = null;
 
 	#[ORM\ManyToOne(targetEntity: ElectricityOnLot::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\ElectricityOnLot $electricityOnLot = null;
 
 	#[ORM\Column(type: 'boolean', nullable: true)]
@@ -248,18 +248,18 @@ class Estate
 	protected ?int $elevatorLoad = null;
 
 	#[ORM\ManyToOne(targetEntity: EnergyPerformanceRating::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\EnergyPerformanceRating $energyPerformanceRating = null;
 
 	#[ORM\Column(type: 'float', nullable: true)]
 	protected ?float $energyPerformanceSummary = null;
 
 	#[ORM\ManyToOne(targetEntity: EnergyPerformanceCertificate::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\EnergyPerformanceCertificate $energyPerformanceCertificate = null;
 
 	#[ORM\ManyToOne(targetEntity: Floor::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Floor $floor = null;
 
 	#[ORM\Column(type: 'boolean', nullable: true)]
@@ -275,7 +275,7 @@ class Estate
 	protected ?bool $freeImmediately = null;
 
 	#[ORM\ManyToOne(targetEntity: Furnished::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Furnished $furnished = null;
 
 	/**
@@ -283,7 +283,7 @@ class Estate
 	 */
 	#[ORM\ManyToMany(targetEntity: Furniture::class, cascade: ['persist'])]
 	#[ORM\JoinTable(name: 'realko_estate_furniture')]
-	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id')]
+	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	#[ORM\InverseJoinColumn(name: 'furniture_id', referencedColumnName: 'id')]
 	protected \Doctrine\Common\Collections\Collection $furniture;
 
@@ -291,7 +291,7 @@ class Estate
 	protected ?bool $garden = null;
 
 	#[ORM\ManyToOne(targetEntity: Gas::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Gas $gas = null;
 
 	#[ORM\Column(type: 'string', nullable: true)]
@@ -301,7 +301,7 @@ class Estate
 	protected ?string $gpsLng = null;
 
 	#[ORM\ManyToOne(targetEntity: Heating::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Heating $heating = null;
 
 	/**
@@ -318,7 +318,7 @@ class Estate
 
 	#[ORM\ManyToMany(targetEntity: CharacterOfVillage::class, cascade: ['persist'])]
 	#[ORM\JoinTable(name: 'realko_estate_character_of_village')]
-	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id')]
+	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	#[ORM\InverseJoinColumn(name: 'character_of_village_id', referencedColumnName: 'id')]
 	protected \Doctrine\Common\Collections\Collection $characterOfVillage;
 
@@ -333,20 +333,20 @@ class Estate
 
 	#[ORM\ManyToMany(targetEntity: Infrastructure::class, cascade: ['persist'])]
 	#[ORM\JoinTable(name: 'realko_estate_infrastructure')]
-	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id')]
+	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	#[ORM\InverseJoinColumn(name: 'infrastructure_id', referencedColumnName: 'id')]
 	protected \Doctrine\Common\Collections\Collection $infrastructure;
 
 	#[ORM\ManyToOne(targetEntity: InternetConnection::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\InternetConnection $internetConnection = null;
 
 	#[ORM\ManyToOne(targetEntity: Category::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Category $category = null;
 
 	#[ORM\ManyToOne(targetEntity: KindOfPlotNumbers::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\KindOfPlotNumbers $kindOfPlotNumbers = null;
 
 	#[ORM\Column(type: 'boolean', nullable: true)]
@@ -356,7 +356,7 @@ class Estate
 	protected ?Location $location = null;
 
 	#[ORM\ManyToOne(targetEntity: Locality::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Locality $locality = null;
 
 	#[ORM\Column(type: 'boolean', nullable: true)]
@@ -415,17 +415,17 @@ class Estate
 
 	#[ORM\ManyToMany(targetEntity: Orientation::class, cascade: ['persist'])]
 	#[ORM\JoinTable(name: 'realko_estate_orientation')]
-	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id')]
+	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	#[ORM\InverseJoinColumn(name: 'orientation_id', referencedColumnName: 'id')]
 	protected \Doctrine\Common\Collections\Collection $orientation;
 
 	#[ORM\ManyToOne(targetEntity: Parking::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Parking $parking = null;
 
 	#[ORM\ManyToMany(targetEntity: Parking::class, cascade: ['persist'])]
 	#[ORM\JoinTable(name: 'realko_estate_parking')]
-	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id')]
+	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	#[ORM\InverseJoinColumn(name: 'parking_id', referencedColumnName: 'id')]
 	protected \Doctrine\Common\Collections\Collection $parkingMulti;
 
@@ -433,11 +433,11 @@ class Estate
 	protected ?bool $pcNetLines = null;
 
 	#[ORM\ManyToOne(targetEntity: PeriodOfChargesAndServices::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\PeriodOfChargesAndServices $periodOfChargesAndServices = null;
 
 	#[ORM\ManyToOne(targetEntity: PeriodOfPrice::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\PeriodOfPrice $periodOfPrice = null;
 
 	#[ORM\Column(type: 'boolean', nullable: true)]
@@ -468,12 +468,12 @@ class Estate
 	protected ?bool $priceWithChargesAndServices = null;
 
 	#[ORM\ManyToOne(targetEntity: ProtectedLandscapeArea::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\ProtectedLandscapeArea $protectedLandscapeArea = null;
 
 	#[ORM\ManyToMany(targetEntity: ProtectionZone::class, cascade: ['persist'])]
 	#[ORM\JoinTable(name: 'realko_estate_protection_zone')]
-	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id')]
+	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	#[ORM\InverseJoinColumn(name: 'protection_zone_id', referencedColumnName: 'id')]
 	protected \Doctrine\Common\Collections\Collection $protectionZone;
 
@@ -484,7 +484,7 @@ class Estate
 	protected ?string $registrationNumber = null;
 
 	#[ORM\ManyToOne(targetEntity: RoadType::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\RoadType $roadType = null;
 
 	#[ORM\Column(type: 'boolean', nullable: true)]
@@ -497,29 +497,29 @@ class Estate
 	protected ?bool $shortTermLease = null;
 
 	#[ORM\ManyToOne(targetEntity: SocialFacilities::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\SocialFacilities $socialFacilities = null;
 
 	#[ORM\ManyToMany(targetEntity: SourceOfHotWater::class, cascade: ['persist'])]
 	#[ORM\JoinTable(name: 'realko_estate_source_of_hot_water')]
-	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id')]
+	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	#[ORM\InverseJoinColumn(name: 'source_of_hot_water_id', referencedColumnName: 'id')]
 	protected \Doctrine\Common\Collections\Collection $sourceOfHotWater;
 
 	#[ORM\ManyToOne(targetEntity: StatusOfCommission::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\StatusOfCommission $statusOfCommission = null;
 
 	#[ORM\ManyToOne(targetEntity: StatusOfEstate::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\StatusOfEstate $statusOfEstate = null;
 
 	#[ORM\ManyToOne(targetEntity: StructureOfBuilding::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\StructureOfBuilding $structureOfBuilding = null;
 
 	#[ORM\ManyToOne(targetEntity: SubtypeOfRealEstate::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\SubtypeOfRealEstate $subtypeOfRealEstate = null;
 
 	#[ORM\Column(type: 'float', nullable: true)]
@@ -542,7 +542,7 @@ class Estate
 
 	#[ORM\ManyToMany(targetEntity: TransportAccessibility::class, cascade: ['persist'])]
 	#[ORM\JoinTable(name: 'realko_estate_transport_accessibility')]
-	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id')]
+	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	#[ORM\InverseJoinColumn(name: 'transport_acessibility_id', referencedColumnName: 'id')]
 	protected \Doctrine\Common\Collections\Collection $transportAccessibility;
 
@@ -550,43 +550,43 @@ class Estate
 	protected ?bool $turnkey = null;
 
 	#[ORM\ManyToOne(targetEntity: TypeOfCommission::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\TypeOfCommission $typeOfCommission = null;
 
 	#[ORM\ManyToOne(targetEntity: TypeOfContract::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\TypeOfContract $typeOfContract = null;
 
 	#[ORM\ManyToOne(targetEntity: TypeOfChargesAndServices::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\TypeOfChargesAndServices $typeOfChargesAndServices = null;
 
 	#[ORM\ManyToOne(targetEntity: TypeOfOwnership::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\TypeOfOwnership $typeOfOwnership = null;
 
 	#[ORM\ManyToOne(targetEntity: TypeOfPrice::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\TypeOfPrice $typeOfPrice = null;
 
 	#[ORM\ManyToOne(targetEntity: TypeOfRealEstate::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\TypeOfRealEstate $typeOfRealEstate = null;
 
 	#[ORM\ManyToOne(targetEntity: TypeOfRealEstateCadastre::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\TypeOfRealEstateCadastre $typeOfRealEstateCadastre = null;
 
 	#[ORM\Column(type: 'string', nullable: true)]
 	protected ?string $urlEstateDetail = null;
 
 	#[ORM\ManyToOne(targetEntity: Utilisation::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Utilisation $utilisation = null;
 
 	#[ORM\ManyToMany(targetEntity: UtilisationByLandUsePlanning::class, cascade: ['persist'])]
 	#[ORM\JoinTable(name: 'realko_utilisation_by_land_use_planning')]
-	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id')]
+	#[ORM\JoinColumn(name: 'estate_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
 	#[ORM\InverseJoinColumn(name: 'utilisation_by_land_use_planning_id', referencedColumnName: 'id')]
 	protected \Doctrine\Common\Collections\Collection $utilisationByLandUsePlanning;
 
@@ -597,7 +597,7 @@ class Estate
 	protected ?\DateTimeImmutable $validityOfTreatyTo = null;
 
 	#[ORM\ManyToOne(targetEntity: Water::class)]
-	#[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
 	protected ?\Codebros\RealkoCommon\Domain\Entity\Water $water = null;
 
 	#[ORM\Column(type: 'integer', nullable: true)]
