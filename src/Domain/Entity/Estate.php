@@ -308,6 +308,7 @@ class Estate
 	 * @var \Doctrine\Common\Collections\Collection<int, \Codebros\RealkoCommon\Domain\Entity\Heating2>
 	 */
 	#[ORM\OneToMany(mappedBy: 'estate', targetEntity: Heating2::class, cascade: ['persist'])]
+    #[ORM\JoinColumn(onDelete: 'CASCADE')]
 	protected \Doctrine\Common\Collections\Collection $heating2;
 
 	#[ORM\Column(type: 'string', nullable: true)]
