@@ -326,7 +326,7 @@ class EstateConverter implements DomainConverter
 			'security' => $object->security(),
 			'share' => $object->share(),
 			'shortTermLease' => $object->shortTermLease(),
-			'socialFacilities' => $object->socialFacilities()->toArray(),
+			'socialFacilities' => $object->socialFacilities()?->toArray(),
 			'sourceOfHotWater' => \array_map(static fn(\Codebros\RealkoCommon\Domain\Entity\SourceOfHotWater $row): array => $row->toArray(), $object->sourceOfHotWater()->toArray()),
 			'stamp' => $object->version(),
 			'statusOfCommission' => $object->statusOfCommission()?->toArray(),
