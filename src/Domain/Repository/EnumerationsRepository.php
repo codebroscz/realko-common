@@ -68,8 +68,8 @@ abstract class EnumerationsRepository
 
 	/**
 	 * @param class-string<E> $enumType
-     *
-     * @phpstan-return T
+	 *
+	 * @phpstan-return T
 	 *
 	 * @throws \Codebros\RealkoCommon\Domain\EntityNotFound
 	 */
@@ -77,14 +77,14 @@ abstract class EnumerationsRepository
 
 	/**
 	 * @param class-string<E> $enumType
-     *
-     * @phpstan-return T
+	 *
+	 * @phpstan-return T
 	 */
 	abstract public function find(string $enumType, int $id): ?\Codebros\RealkoCommon\Domain\Entity\Enumeration;
 
 	/**
 	 * @param class-string<E> $enumType
-     *
+	 *
 	 * @phpstan-return T
 	 */
 	abstract public function findOrCreateNew(string $enumType, int $id, string $title): \Codebros\RealkoCommon\Domain\Entity\Enumeration;

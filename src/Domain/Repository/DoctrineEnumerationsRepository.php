@@ -44,7 +44,7 @@ class DoctrineEnumerationsRepository extends EnumerationsRepository
 	}
 
 	/**
-     * @inheritDoc
+	 * @inheritDoc
 	 */
 	public function get(string $enumType, int $id): \Codebros\RealkoCommon\Domain\Entity\Enumeration
 	{
@@ -91,12 +91,12 @@ class DoctrineEnumerationsRepository extends EnumerationsRepository
 		$this->precacheEnumerations();
 
 		if ( ! \array_key_exists($id, $this->cache[$enumType] ?? [])) {
-            $class = $this->enumToEntity($enumType);
+			$class = $this->enumToEntity($enumType);
 
 			/**
-             * @phpstan-var T $enum
-             * @var \Codebros\RealkoCommon\Domain\Entity\Enumeration $enum
-             */
+			 * @phpstan-var T $enum
+			 * @var \Codebros\RealkoCommon\Domain\Entity\Enumeration $enum
+			 */
 			$enum = new $class($id, $title);
 
 			$this->entityManager->persist($enum);
@@ -107,14 +107,14 @@ class DoctrineEnumerationsRepository extends EnumerationsRepository
 		return $this->cache[$enumType][$id];
 	}
 
-    /**
-     * @phpstan-param class-string<E> $enumType
-     *
-     * @phpstan-return class-string<T>
-     */
-    private function enumToEntity(string $enumType): string
-    {
-        return $this->knownEnums[$enumType];
-    }
+	/**
+	 * @phpstan-param class-string<E> $enumType
+	 *
+	 * @phpstan-return class-string<T>
+	 */
+	private function enumToEntity(string $enumType): string
+	{
+		return $this->knownEnums[$enumType];
+	}
 
 }

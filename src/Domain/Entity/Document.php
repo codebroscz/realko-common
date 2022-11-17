@@ -24,7 +24,7 @@ class Document
 	protected ?\DateTimeImmutable $dateOfUpdate = null;
 
 	#[ORM\ManyToOne(targetEntity: TypeOfDocument::class, cascade: ['persist'])]
-    #[ORM\JoinColumn(nullable: true)]
+	#[ORM\JoinColumn(nullable: true)]
 	protected TypeOfDocument $typeOfDocument;
 
 	#[ORM\Column]
