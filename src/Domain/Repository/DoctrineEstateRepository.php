@@ -30,15 +30,22 @@ class DoctrineEstateRepository implements EstateRepository
 		return $this->repository->find($id);
 	}
 
+    /**
+     * Search is performed with respect to deleted state of entity
+     */
 	public function findByExternalId(int $externalId): ?\Codebros\RealkoCommon\Domain\Entity\Estate
 	{
 		return $this->repository->findOneBy([
 			'externalId' => $externalId,
+            'deletedAt' => null,
 		], [
 			'version' => 'DESC',
 		]);
 	}
 
+    /**
+     * Search is NOT performed with respect to deleted state of entity
+     */
 	public function findByExternalIdAndStamp(int $externalId, int $stamp): ?\Codebros\RealkoCommon\Domain\Entity\Estate
 	{
 		return $this->repository->findOneBy([
