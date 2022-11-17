@@ -15,6 +15,9 @@ class Estate
 	#[ORM\CustomIdGenerator(class: \Ramsey\Uuid\Doctrine\UuidGenerator::class)]
 	protected \Ramsey\Uuid\UuidInterface $id;
 
+    #[ORM\Column(type: 'datetime_immutable')]
+    protected \DateTimeImmutable $createdAt;
+
 	#[ORM\Column(type: 'datetime_immutable', nullable: true)]
 	protected ?\DateTimeImmutable $deletedAt;
 
@@ -788,6 +791,7 @@ class Estate
 		?int $yearOfRenovation = null,
 	)
 	{
+        $this->createdAt = new \DateTimeImmutable();
 		$this->externalId = $externalId;
 		$this->version = $version;
 		$this->photos = new \Doctrine\Common\Collections\ArrayCollection($photos);
@@ -1805,6 +1809,16 @@ class Estate
 	{
 		return $this->yearOfRenovation;
 	}
+
+    public function createdAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function deletedAt(): ?\DateTimeImmutable
+    {
+        return $this->deletedAt;
+    }
 
 	public function delete(): void
 	{
