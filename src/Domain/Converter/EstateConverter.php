@@ -449,9 +449,9 @@ class EstateConverter implements DomainConverter
 			($data['heating'] ?? null) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\Heating::class, $data['heating']['id'], $data['heating']['title']) : null,
 			\array_map(function ($row): \Codebros\RealkoCommon\Domain\Entity\Heating2 {
 				return new \Codebros\RealkoCommon\Domain\Entity\Heating2(
-					\array_key_exists('locationSource', $row) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\LocationSource::class, $row['locationSource']['id'], $row['locationSource']['title']) : null,
-					\array_key_exists('source', $row) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\Source::class, $row['source']['id'], $row['source']['title']) : null,
-					\array_key_exists('heatingElement', $row) ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\HeatingElement::class, $row['heatingElement']['id'], $row['heatingElement']['title']) : null,
+					\array_key_exists('locationSource', $row) && $row['locationSource'] !== null ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\LocationSource::class, $row['locationSource']['id'], $row['locationSource']['title']) : null,
+					\array_key_exists('source', $row) && $row['source'] !== null ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\Source::class, $row['source']['id'], $row['source']['title']) : null,
+					\array_key_exists('heatingElement', $row) && $row['heatingElement'] !== null ? $this->enumerationsRepository->findOrCreateNew(\Codebros\RealkoCommon\Domain\Enum\HeatingElement::class, $row['heatingElement']['id'], $row['heatingElement']['title']) : null,
 				);
 			}, $data['heating2']),
 			$data['heatingComment'],
