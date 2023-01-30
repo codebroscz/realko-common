@@ -989,6 +989,11 @@ class Estate
 		return $this->photos->toArray();
 	}
 
+	public function removePhoto(Document $photo): bool
+	{
+		return $this->photos->removeElement($photo);
+	}
+
 	/**
 	 * @return Document[]
 	 */
